@@ -1,0 +1,15 @@
+version: '3'
+services:
+  websvn:
+    build:
+      context: .
+      target: websvn
+    environment:
+      ABOUT_MESSAGE: "For Rancid"
+    volumes:
+      - /var/lib/rancid/SVN:/repos/Rancid:ro
+    ports:
+      - "127.0.0.1:8008:80"
+    restart:
+      always
+
